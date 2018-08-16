@@ -1,0 +1,22 @@
+---
+- hosts: windows
+  gather_facts: False
+  connection: local
+  tasks:
+    - name: Install all security, critical, and rollup updates
+      win_updates:
+      category_names:
+         - SecurityUpdates
+         - CriticalUpdates
+         - UpdateRollups   
+ 
+    - mail:
+        host: smtp.gmail.com
+        port: 587
+        username: vallabh4@gmail.com
+        password: 569383677
+        to: shree.vallabh@kuliza.com
+        subject: Test
+        body: "Windows update in {{ ansible_host }} has successfully completed"
+      run_once: True
+      delegate_to: localhost

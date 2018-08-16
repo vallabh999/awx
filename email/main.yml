@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: False
+  connection: local
+  tasks: 
+    - mail:
+        host: smtp.gmail.com
+        port: 587
+        username: vallabh4@gmail.com
+        password: 569383677
+        to: shree.vallabh@kuliza.com
+        subject: Test
+        body: "Windows update in has successfully completed"
+      run_once: True
+

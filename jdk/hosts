@@ -1,0 +1,4 @@
+[windows]
+
+server ansible_host=35.200.148.84 
+

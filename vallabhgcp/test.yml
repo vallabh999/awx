@@ -1,0 +1,15 @@
+---
+- hosts: testwindows
+  gather_facts: False
+
+  tasks:
+    - name: Download Build File from JDK Bucket.
+      local_action:
+          module: gc_storage
+          bucket: test569383
+          object: ansible-tower-setup-latest.tar.gz
+          dest: /home/kuliza-293/ansible-tower-setup-latest.tar.gz
+          mode: get
+          gs_access_key: GOOGGSQOT2ZVXHEMXRX6C4CT
+          gs_secret_key: +ub40xXNmBR+rnIr5EvRsalNOxIPBGxnEApucTfw
+          
